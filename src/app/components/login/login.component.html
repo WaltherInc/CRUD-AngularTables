@@ -1,6 +1,9 @@
 <div class="body">
   <div class="login">
-    <form [formGroup]="form" (ngSubmit)="Login()">
+
+    <mat-spinner *ngIf="loading" class="mat-spiner" diameter="50"></mat-spinner>
+
+    <form *ngIf="!loading" [formGroup]="form" (ngSubmit)="Login()">
       <img id="imagen-login" src="../../../assets/img/man.png" />
       <!--https://www.flaticon.com/    ***Download imagen-->
       <h1>Login In</h1>
@@ -26,3 +29,6 @@
     </form>
   </div>
 </div>
+
+
+

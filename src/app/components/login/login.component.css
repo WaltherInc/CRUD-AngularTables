@@ -23,3 +23,7 @@
 .button-login{
   height: 40px;
 }
+
+.mat-spiner{
+  margin: 0 auto;
+}
