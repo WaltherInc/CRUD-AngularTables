@@ -1,20 +1,28 @@
 <div class="body">
   <div class="login">
-    <img id="imagen-login" src="../../../assets/img/man.png" />
-    <!--https://www.flaticon.com/    ***Download imagen-->
-    <h1>Login In</h1>
+    <form [formGroup]="form" (ngSubmit)="Login()">
+      <img id="imagen-login" src="../../../assets/img/man.png" />
+      <!--https://www.flaticon.com/    ***Download imagen-->
+      <h1>Login In</h1>
 
-    <mat-form-field class="input-login" appearance="fill" auto>
-      <mat-label>Usuary</mat-label>
-      <input matInput autocomplete="off">
-    </mat-form-field>
+      <!--Input Usuary-->
+      <mat-form-field class="input-login" appearance="fill" auto>
+        <mat-label>Usuary</mat-label>
+        <input type="email" matInput autocomplete="off" formControlName="usuary"/>
+      </mat-form-field>
 
-    <mat-form-field class="input-login" appearance="fill">
-      <mat-label>Password</mat-label>
-      <input matInput autocomplete="off">
-    </mat-form-field>
+      <!--Input password-->
+      <mat-form-field class="input-login" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput autocomplete="off" formControlName="password"/>
+      </mat-form-field>
 
-    <br>
-    <button class="button-login input-login" mat-flat-button color="primary">Login</button>
+      <br/>
 
+      <button type="submit" class="button-login input-login" mat-flat-button color="primary" [disabled]="form.invalid">
+        Login
+      </button>
+
+    </form>
+  </div>
 </div>
